@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced HTML5 Page with Form</title>
+  <style>
+    /* ===== Global Styles ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header, footer {
+      background-color: #046307; /* Emerald Green */
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    h1, h2 {
+      color: #b8860b; /* Gold */
+    }
+
+    section {
+      padding: 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ===== Table Styles ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #b8860b;
+      color: white;
+    }
+
+    /* Make table responsive */
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+      th {
+        position: sticky;
+        top: 0;
+      }
+      td {
+        padding-left: 50%;
+        position: relative;
+      }
+      td::before {
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+    }
+
+    /* ===== Media Styling ===== */
+    figure {
+      margin: 0 0 1rem 0;
+      text-align: center;
+    }
+    img, video, audio {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ===== Form Styling ===== */
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: grid;
+      gap: 1rem;
+    }
+
+    fieldset {
+      border: 2px solid #046307;
+      border-radius: 8px;
+      padding: 15px;
+    }
+    legend {
+      font-weight: bold;
+      color: #046307;
+    }
+    label {
+      margin-top: 10px;
+      display: block;
+      font-weight: 500;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .submit-btn {
+      background-color: #046307;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .submit-btn:hover {
+      background-color: #034d05;
+    }
+
+    /* ===== Responsive Form Columns ===== */
+    @media (min-width: 768px) {
+      fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      fieldset legend {
+        grid-column: span 2;
+      }
+      fieldset label, fieldset input, fieldset select, fieldset textarea {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <h1>Welcome to My Enhanced HTML5 Page</h1>
+    <p>This page will be demonstrating lists, tables, media, and a responsive HTML5 form with native validation.</p>
+  </header>
+
+  <!-- ===== Lists Section ===== -->
+  <section>
+    <!-- Unordered list -->
+    <h2>What's so good about HTML5? Here are top 3 benefits of HTML5</h2>
+    <ul>
+      <li>Improved semantics with new structural elements.</li>
+      <li>Native support for audio, video, and interactive elements.</li>
+      <li>Enhanced forms with built-in validation and new input types.</li>
+    </ul>
+<!-- Ordered List -->
+    <h2>If you are looking to create forms in your website, these steps to create a great form will be useful</h2>
+    <ol>
+      <li>Plan your fields and structure for usability.</li>
+      <li>Use labels and placeholders for guidance.</li>
+      <li>Apply native HTML5 attributes for validation.</li>
+    </ol>
+  </section>
+
+  <!-- ===== Table Section ===== -->
+  <section>
+    <h2>HTML5 Input Types Overview</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Input Type</th>
+          <th>Purpose</th>
+          <th>Example Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>email</td>
+          <td>Collects a valid email address</td>
+          <td>user@example.com</td>
+        </tr>
+        <tr>
+          <td>tel</td>
+          <td>Collects a telephone number</td>
+          <td>+254712345678</td>
+        </tr>
+        <tr>
+          <td>date</td>
+          <td>Lets users pick a date</td>
+          <td>2025-08-11</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== Media Section ===== -->
+  <section>
+    <h2> Sample Media Embeds</h2>
+    <p>Did you know that HTML5 allows easier embeding of Media? Well it does and its fabulous, here are some examples of media that can be embedded directly</p>
+    <figure>
+      <img src="https://images.pexels.com/photos/16229239/pexels-photo-16229239.jpeg" alt="Photo by Marjan Taghipour: https://www.pexels.com/photo/blue-and-red-16229239/">
+      <figcaption>Example 1: Image embed using semantic HTML5.</figcaption>
+    </figure>
+
+    <figure>
+      <audio controls>
+        <source src="FieldMarshal - Anthem (Wimbo Wa Mapambano).mp3" type="audio/mpeg" alt="Wimbo wa Maandamano, Field Marshals Anthem: https://youtu.be/StdyiG5yXrE?si=M3OykdMqs2v5HX8L">
+      </audio>
+      <figcaption>Example 2: Embedded audio player.</figcaption>
+    </figure>
+
+    <figure>
+      <video controls>
+        <source src="https://videos.pexels.com/video-files/9783688/9783688-uhd_2732_1440_25fps.mp4" type="video/mp4" alt="Video by Ron Lach  from Pexels: https://www.pexels.com/video/back-view-of-a-boy-looking-at-a-screen-9783688/">
+        Your browser does not support the video tag.
+      </video>
+      <figcaption>Example 3: Embedded video player.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ===== Form Section ===== -->
+  <section>
+    <h2>Registration Form</h2>
+    <!-- Redirects to success.html on submit -->
+    <form action="success.html" method="get" autocomplete="on">
+
+      <!-- Personal Info -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required minlength="3">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+254712345678" pattern="^\+?\d{10,15}$" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </fieldset>
+
+      <!-- Account Details -->
+      <fieldset>
+        <legend>Account Details</legend>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Choose a username" required minlength="5">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter a strong password" required minlength="8">
+
+        <label for="confirmpassword">Confirm Password:</label>
+        <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Re-enter your password" required minlength="8">
+      </fieldset>
+
+      <!-- Preferences -->
+      <fieldset>
+        <legend>Preferences</legend>
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">--Select your country--</option>
+          <option value="kenya">Kenya</option>
+          <option value="uganda">Uganda</option>
+          <option value="tanzania">Tanzania</option>
+        </select>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Other</label>
+
+        <label for="bio">Short Bio:</label>
+        <textarea id="bio" name="bio" placeholder="Tell us a bit about yourself" rows="4" maxlength="300"></textarea>
+      </fieldset>
+
+      <!-- Agreements -->
+      <fieldset>
+        <legend>Agreements</legend>
+        <label>
+          <input type="checkbox" name="terms" required> I agree to the terms and conditions
+        </label>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <input type="submit" value="Register" class="submit-btn">
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Florence Nyaoke. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+ 
